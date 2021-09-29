@@ -23,14 +23,14 @@ if arcpy.CheckExtension("spatial") == "Available":
 
         
         # Stack bands to form single composite raster
-        arcpy.env.workspace = "C:\Users\dfc24\Documents\ArcGIS\Default.gdb"
+        arcpy.env.workspace = arcpy.GetParameterAsText(7)
         arcpy.CompositeBands_management([ReclassedRed, ReclassedGreen, ReclassedBlue], "Comp")
 
         
         # Classify the raster using the isodata unsupervised classification algorithm
         arcpy.AddMessage("Training Classifier")
-        TrainIsoClusterClassifier("Comp",10,"U:\Geospatial_Software_Final_Projects\ArcPy_Georeferencing\ClassDef.ecd","#",20,20,1)
-        Classified = ClassifyRaster("Comp", "U:\Geospatial_Software_Final_Projects\ArcPy_Georeferencing\ClassDef.ecd")
+        TrainIsoClusterClassifier("Comp",10, arcpy.GetParameterAsText(8),"#",20,20,1)
+        Classified = ClassifyRaster("Comp", arcpy.GetParameterAsText(8))
 
         
         # Reclassify raster in order to recieve a count of pixels in each class
