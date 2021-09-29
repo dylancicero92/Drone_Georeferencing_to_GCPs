@@ -21,15 +21,16 @@ or right-click on My Toolboxes and use New > Toolbox to create (then rename) a n
 before pressing OK or Finish.
 
 ```
-DISPLAY NAME                    DATA TYPE           DIRECTION    DEFAULT
-Input Band 1                    Raster Layer         Input
-Input Band 2                    Raster Layer         Input
-Input Band 3                    Raster Layer         Input
-Number GCPs                     Long                 Input        3
-Target Control Points           Feature Layer        Input
-Target Longitude Field          Field                Input
-Target Latitude Field           Field                Input
-Output Grid                     Raster Dataset       Output
+DISPLAY NAME                    DATA TYPE                 DIRECTION    DEFAULT
+Input Band 1                    String (Raster Path)         Input
+Input Band 2                    String (Raster Path)         Input
+Input Band 3                    String (Raster Path)         Input
+Number GCPs                     Long                         Input        3
+Target Control Points           String (.shp Path)           Input
+Target Longitude Field          Field                        Input
+Target Latitude Field           Field                        Input
+Output Grid                     Raster Dataset               Output
+
 ```
 
 ## Running
